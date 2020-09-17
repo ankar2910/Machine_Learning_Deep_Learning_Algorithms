@@ -84,10 +84,10 @@ p_mv_df
 
 
 def missing_values(df,predictors):
-    for i in predictors:
+    for col in predictors:
         nan = np.nan
         imputer = SimpleImputer( missing_values=nan,strategy='mean')
-        df[i] = imputer.fit_transform(pd.DataFrame(df[i]))
+        df[i] = imputer.fit_transform(pd.DataFrame(df[col]))
     return(df)
         
 
